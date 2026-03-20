@@ -130,7 +130,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          Binary Minds, Bright Futures. We are preparing something remarkable.
+          Binary Minds, Bright Futures. Something Exciting is Coming Soon.
         </motion.p>
 
         {/* Dynamic Features Showcase */}
