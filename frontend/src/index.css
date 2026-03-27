@@ -19,7 +19,6 @@
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: inherit; /* Applied via Tailwind config */
-    overflow-x: hidden;
     width: 100%;
   }
 
@@ -33,6 +32,18 @@
 /* Base resets & utilities */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   width: 100%;
+}
+
+/* Scoped horizontal rail styling to avoid bulky native x-scrollbars in teaser sections */
+.courses-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.courses-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

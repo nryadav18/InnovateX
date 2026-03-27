@@ -51,33 +51,41 @@ const CodingGridTeaser = () => {
       </div>
 
       {/* Horizontal Scroll Area */}
-      <div className="w-full overflow-x-auto pb-10 hide-scrollbar cursor-grab active:cursor-grabbing pl-4 md:pl-8 lg:pl-16">
-        <motion.div
-          className="flex gap-6 w-max pr-8"
-          style={{ x: xTransform }}
+      <div className="relative">
+        <div
+          className="courses-scroll w-full overflow-x-auto overflow-y-visible pb-8 cursor-grab active:cursor-grabbing pl-4 md:pl-8 lg:pl-16"
+          aria-label="Scrollable class curriculum cards"
         >
-          {coding.map((cdng, i) => (
-            <motion.div
-              key={cdng.class}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.05 + 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -10 }}
-              className="w-72 bg-card rounded-xl p-8 border border-border flex flex-col items-start gap-4 hover:border-primary/50 hover:shadow-[0_10px_30px_-10px_rgba(245,197,24,0.15)] transition-all"
-            >
-              <div className="w-14 h-14 bg-bg rounded-lg flex items-center justify-center border border-border">
-                <cdng.icon className="text-primary w-7 h-7" />
-              </div>
-              <h3 className="font-display text-4xl text-text mt-2">{cdng.class}</h3>
-              <p className="text-text-muted font-sans text-sm h-16">{cdng.topics}</p>
-              <Link to={`/coding`} className="mt-auto pt-4 border-t border-border w-full text-xs font-condensed uppercase tracking-widest text-primary hover:text-text transition-colors flex justify-between items-center group">
-                View Curriculum
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+          <motion.div
+            className="flex gap-6 w-max pr-8 md:pr-16 snap-x snap-mandatory"
+            style={{ x: xTransform }}
+          >
+            {coding.map((cdng, i) => (
+              <motion.div
+                key={cdng.class}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.05 + 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -10 }}
+                className="w-72 snap-start bg-card rounded-xl p-8 border border-border flex flex-col items-start gap-4 hover:border-primary/50 hover:shadow-[0_10px_30px_-10px_rgba(245,197,24,0.15)] transition-all"
+              >
+                <div className="w-14 h-14 bg-bg rounded-lg flex items-center justify-center border border-border">
+                  <cdng.icon className="text-primary w-7 h-7" />
+                </div>
+                <h3 className="font-display text-4xl text-text mt-2">{cdng.class}</h3>
+                <p className="text-text-muted font-sans text-sm h-16">{cdng.topics}</p>
+                <Link to={`/coding`} className="mt-auto pt-4 border-t border-border w-full text-xs font-condensed uppercase tracking-widest text-primary hover:text-text transition-colors flex justify-between items-center group">
+                  View Curriculum
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-surface to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-surface to-transparent" />
       </div>
     </section>
   );
