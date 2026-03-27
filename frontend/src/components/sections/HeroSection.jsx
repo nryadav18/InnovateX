@@ -50,7 +50,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 2.0, ease: [0.22, 1, 0.36, 1] }}
           className="text-text-muted font-sans text-lg md:text-2xl max-w-3xl mb-12 leading-relaxed"
         >
-          Binary Minds | Bright Futures — equipping Class 3 to Class 10 students with real technology skills through hands-on school programmes.
+          Binary Minds | Bright Futures — equipping Students with real technology skills through hands-on school programmes.
         </motion.p>
 
         <motion.div 

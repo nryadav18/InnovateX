@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-text-muted font-sans text-sm leading-relaxed">
-              Equipping every school student from Class 3 to Class 10 with Coding, Robotics, and AI skills through hands-on, curriculum-aligned learning. Where ideas become real, moving things.
+              Equipping every school student with Coding, Robotics, and AI skills through hands-on, curriculum-aligned learning. Where ideas become real, moving things.
             </p>
           </div>
 
