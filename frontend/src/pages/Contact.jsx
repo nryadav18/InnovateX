@@ -106,7 +106,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-condensed text-text uppercase tracking-widest text-sm mb-1">Email</h4>
-                      <p className="font-sans text-text-muted leading-relaxed">hello@innovatex.in</p>
+                      <p className="font-sans text-text-muted leading-relaxed">support@innovatex.in</p>
                     </div>
                   </div>
                 </div>
