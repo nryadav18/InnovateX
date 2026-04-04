@@ -81,7 +81,8 @@ const Contact = () => {
                       <MapPin className="text-primary" size={20} />
                     </div>
                     <div>
-                      <h4 className="font-condensed text-text uppercase tracking-widest text-sm mb-1">Headquarters</h4>
+                      <h4 className="font-condensed text-text uppercase tracking-widest text-sm mb-1">Headquarters - Hyderabad</h4>
+                      <h4 className="font-condensed text-text uppercase tracking-widest text-sm mb-1">Branches - Visakhapatnam, Kakinada</h4>
                       <p className="font-sans text-text-muted leading-relaxed">
                         65-5-1/C, opp. GPT College,<br/>
                         G.P.T. Colony, Kakanada,<br/>
