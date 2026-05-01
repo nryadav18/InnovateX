@@ -4,7 +4,6 @@ import { StatCounter } from '../ui/StatCounter';
 const stats = [
   { value: 100, suffix: '%', label: 'Schools Renewed Year 2' },
   { value: 8, suffix: '', label: 'Classes Covered (Class 3–10)' },
-  { value: 36, suffix: '', label: 'Day Trainer Intensive' },
   { value: 4, suffix: '', label: 'Levels of Learning' },
 ];
 
