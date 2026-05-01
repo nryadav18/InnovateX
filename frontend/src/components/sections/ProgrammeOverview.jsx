@@ -6,42 +6,36 @@ const phases = [
   {
     phase: 1,
     title: 'Digital Fluency & AI',
-    days: 'Days 1–5',
     topics: ['Computer Basics & OS', 'Generative AI Introduction', 'Effective Prompting'],
     project: 'First AI-Assisted Story'
   },
   {
     phase: 2,
     title: 'Web Builder — HTML',
-    days: 'Days 6–8',
     topics: ['HTML5 Structure & Tags', 'Web Styling Basics', 'Responsive Layout Concepts'],
     project: 'Personal Portfolio Webpage'
   },
   {
     phase: 3,
     title: 'Python & Turtle Art',
-    days: 'Days 9–14',
     topics: ['Python Syntax & Variables', 'Loops & Conditions', 'Turtle Graphics Library'],
     project: 'Algorithmic Art Generator'
   },
   {
     phase: 4,
     title: 'Python Apps & Games',
-    days: 'Days 15–24',
     topics: ['Functions & Scopes', 'Game Logic Design', 'Interactive User Input'],
     project: 'Text-Based Adventure Game'
   },
   {
     phase: 5,
     title: 'Pedagogy & Grand Expo',
-    days: 'Days 25–30',
     topics: ['Teaching Methodologies', 'Presentation Skills', 'Project Showcasing'],
     project: 'Grand Expo Demonstration'
   },
   {
     phase: 6,
     title: 'Digital Citizenship',
-    days: 'Days 31–36',
     topics: ['Online Safety & Privacy', 'Spotting Deepfakes', 'AI Ethics & Future'],
     project: 'Digital Citizen Campaign'
   }
@@ -61,7 +55,7 @@ const ProgrammeOverview = () => {
             <div className="inline-block px-3 py-1 mb-4 rounded-full border border-primary/30 text-primary uppercase font-condensed tracking-widest text-sm bg-primary/5">
               Curriculum Architecture
             </div>
-            <h2 className="font-display text-5xl md:text-6xl text-text">The 36-Day Journey</h2>
+            <h2 className="font-display text-5xl md:text-6xl text-text">The Journey</h2>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -92,9 +86,6 @@ const ProgrammeOverview = () => {
                   <div className="relative z-10 flex-grow">
                     <div className="flex justify-between items-center mb-6">
                       <span className="font-display text-3xl text-primary">PHASE {phase.phase}</span>
-                      <span className="bg-bg text-text-muted text-xs px-3 py-1 rounded font-mono font-bold tracking-wider border border-border">
-                        {phase.days}
-                      </span>
                     </div>
 
                     <h3 className="font-condensed text-2xl text-text uppercase tracking-wide mb-6">

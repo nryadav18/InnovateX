@@ -154,7 +154,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             {[
               { icon: Shield, title: "Curriculum Aligned (NEP)", desc: "We don't force generic bootcamps. Our material is fully aligned to the latest National Educational Policy standards, ensuring academic relevance." },
-              { icon: Users, title: "Trainer Ecosystem", desc: "We don't just provide software. We provide rigorously trained educators who spend 36 days mastering tech pedagogy before stepping into a classroom." },
+              { icon: Users, title: "Trainer Ecosystem", desc: "We don't just provide software. We provide rigorously trained educators who masters tech pedagogy before stepping into a classroom." },
               { icon: Hexagon, title: "Proprietary Physical Books", desc: "Digital learning needs physical grounding. Our multi-level student books act as the physical anchor for abstract coding concepts." },
               { icon: Zap, title: "The Hardware Bridge", desc: "Software is invisible. Robotics makes it visible. We bridge the two seamlessly so students see their code move real, physical objects." }
             ].map((diff, i) => (

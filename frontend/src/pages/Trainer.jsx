@@ -23,9 +23,6 @@ const Trainer = () => {
 
         {/* Hero Section */}
         <section className="container mx-auto px-4 md:px-8 mb-24 text-center relative z-10">
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-primary/30 text-primary uppercase font-condensed tracking-widest text-sm bg-primary/10">
-            36 Days. 108 Hours. Certified.
-          </div>
           <AnimatedText 
             text="THE TECH WIZARD INTENSIVE"
             className="text-text font-display text-5xl md:text-7xl lg:text-[6rem] leading-none mb-6 tracking-wide drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] block max-w-5xl mx-auto"
@@ -45,7 +42,7 @@ const Trainer = () => {
               <div>
                 <h3 className="font-display text-3xl md:text-4xl text-text mb-4">Who is this for?</h3>
                 <p className="font-sans text-text-muted text-lg leading-relaxed">
-                  This programme is designed for passionate educators, fresh graduates, or school teachers who want to upskill. <strong className="text-text font-medium">No prior coding or robotics experience is required.</strong> We start from absolute zero and build you into a dual-tech master of pedagogy, fully capable of leading both software labs and hardware workshops over 36 intensive days.
+                  This programme is designed for passionate educators, fresh graduates, or school teachers who want to upskill. <strong className="text-text font-medium">No prior coding or robotics experience is required.</strong> We start from absolute zero and build you into a dual-tech master of pedagogy, fully capable of leading both software labs and hardware workshops over intensive training days.
                 </p>
               </div>
             </div>
