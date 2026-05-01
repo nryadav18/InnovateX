@@ -5,6 +5,7 @@ const stats = [
   { value: 100, suffix: '%', label: 'Schools Renewed Year 2' },
   { value: 8, suffix: '', label: 'Classes Covered (Class 3–10)' },
   { value: 4, suffix: '', label: 'Levels of Learning' },
+  { value: 1, suffix: '', label: 'In Standards' },
 ];
 
 const StatsBar = () => {
