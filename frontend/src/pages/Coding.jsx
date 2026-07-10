@@ -3,50 +3,43 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PageTransition } from '../components/layout/PageTransition';
 import { AnimatedText } from '../components/ui/AnimatedText';
 import { GlowBorder } from '../components/ui/GlowBorder';
+import { LabImage } from '../components/ui/LabImage';
 import { ChevronDown, Code, Terminal, BookOpen, Layers, Shield, Zap } from 'lucide-react';
 
-const classesTabs = ['Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10'];
+const levelTabs = ['Flyers', 'Movers', 'Advanced', 'Proficient'];
 
 const courseData = {
-  'Class 3': [
-    { id: '3.1', title: 'Computer Typing Mastery', level: 'Beginner', topics: ['Home row keys positioning', 'Posture and ergonomics', 'Speed drill basics'], projects: ['Typing Race Game'] },
-    { id: '3.2', title: 'OS & Keyboard Shortcuts', level: 'Beginner', topics: ['Ctrl+C, Ctrl+V, Win+D', 'File system navigation', 'Window management tricks'], projects: ['Shortcut Ninja Assessment'] },
-    { id: '3.3', title: 'Digital Drawing Basics', level: 'Beginner', topics: ['Mouse control', 'Shapes and colors', 'Digital canvas'], projects: ['My First Digital Painting'] }
+  'Flyers': [
+    { id: '1.1', title: 'Computer Typing Mastery', level: 'Beginner', topics: ['Home row keys positioning', 'Posture and ergonomics', 'Speed drill basics'], projects: ['Typing Race Game'] },
+    { id: '1.2', title: 'OS & Keyboard Shortcuts', level: 'Beginner', topics: ['Ctrl+C, Ctrl+V, Win+D', 'File system navigation', 'Window management tricks'], projects: ['Shortcut Ninja Assessment'] },
+    { id: '1.3', title: 'Digital Drawing Basics', level: 'Beginner', topics: ['Mouse control', 'Shapes and colors', 'Digital canvas'], projects: ['My First Digital Painting'] },
+    { id: '1.4', title: 'Gmail Professionality', level: 'Beginner', topics: ['Composing formal emails', 'Email etiquette & CC/BCC', 'Managing attachments'], projects: ['Drafting an Official Principal Request'] },
+    { id: '1.5', title: 'MS Office Suite - Word', level: 'Beginner', topics: ['Formatting text & fonts', 'Inserting images & tables', 'Page layouts'], projects: ['School Club Newsletter Page'] },
+    { id: '1.6', title: 'Safe Internet Searching', level: 'Beginner', topics: ['Search engine mechanics', 'Evaluating sources', 'Safe browsing habits'], projects: ['Research Scavenger Hunt'] }
   ],
-  'Class 4': [
-    { id: '4.1', title: 'Gmail Professionality', level: 'Beginner', topics: ['Composing formal emails', 'Email etiquette & CC/BCC', 'Managing attachments'], projects: ['Drafting an Official Principal Request'] },
-    { id: '4.2', title: 'MS Office Suite - Word', level: 'Beginner', topics: ['Formatting text & fonts', 'Inserting images & tables', 'Page layouts'], projects: ['School Club Newsletter Page'] },
-    { id: '4.3', title: 'Safe Internet Searching', level: 'Beginner', topics: ['Search engine mechanics', 'Evaluating sources', 'Safe browsing habits'], projects: ['Research Scavenger Hunt'] }
+  'Movers': [
+    { id: '2.1', title: 'Cybersecurity Awareness', level: 'Intermediate', topics: ['Creating strong passwords', 'Identifying Phishing attempts', 'Privacy Settings overview'], projects: ['Privacy Audit Scorecard'] },
+    { id: '2.2', title: 'Generative AI Tools Basics', level: 'Intermediate', topics: ['What is an LLM?', 'DALL-E image generation', 'Ethics of AI'], projects: ['AI Assisted Storybook Generation'] },
+    { id: '2.3', title: 'MS Office Suite - PowerPoint', level: 'Intermediate', topics: ['Slide layouts', 'Transitions & animations', 'Presentation delivery'], projects: ['My Hobby Presentation'] },
+    { id: '2.4', title: 'HTML & CSS Basics', level: 'Intermediate', topics: ['HTML Tags & Elements', 'Styling Text with CSS', 'The Box Model'], projects: ['Personal "About Me" Portfolio'] },
+    { id: '2.5', title: 'Prompt Engineering 101', level: 'Intermediate', topics: ['Context Setting in AI', 'Roleplay Prompts', 'Iterative Refining'], projects: ['Historical Figure Chatbot Prompts'] },
+    { id: '2.6', title: 'Intro to Algorithms', level: 'Intermediate', topics: ['What is an algorithm?', 'Sequential logic', 'Flowcharting'], projects: ['Peanut Butter Jelly Algorithm'] }
   ],
-  'Class 5': [
-    { id: '5.1', title: 'Cybersecurity Awareness', level: 'Intermediate', topics: ['Creating strong passwords', 'Identifying Phishing attempts', 'Privacy Settings overview'], projects: ['Privacy Audit Scorecard'] },
-    { id: '5.2', title: 'Generative AI Tools Basics', level: 'Intermediate', topics: ['What is an LLM?', 'DALL-E image generation', 'Ethics of AI'], projects: ['AI Assisted Storybook Generation'] },
-    { id: '5.3', title: 'MS Office Suite - PowerPoint', level: 'Intermediate', topics: ['Slide layouts', 'Transitions & animations', 'Presentation delivery'], projects: ['My Hobby Presentation'] }
+  'Advanced': [
+    { id: '3.1', title: 'Intro to Python Programming', level: 'Advanced', topics: ['Variables & Data Types', 'Math Operations', 'Print statements & Strings'], projects: ['Interactive Text Calculator'] },
+    { id: '3.2', title: 'HTML & CSS Layouts', level: 'Advanced', topics: ['CSS Flexbox basics', 'CSS Grid basics', 'Responsive Design concepts'], projects: ['Responsive Science Blog Layout'] },
+    { id: '3.3', title: 'Digital Media Ethics', level: 'Advanced', topics: ['Copyright & Fair Use', 'Creative Commons', 'Plagiarism in digital age'], projects: ['Properly Cited Research Page'] },
+    { id: '3.4', title: 'Python Control Flow', level: 'Advanced', topics: ['If/Else Conditional Logic', 'For Loops & Iteration', 'While Loops'], projects: ['Number Guessing Game', 'Star Pattern Generator'] },
+    { id: '3.5', title: 'Cybersecurity - Deepfakes', level: 'Advanced', topics: ['Identifying generated media', 'Verification tools', 'Social impact'], projects: ['Fact-checker Toolkit Concept'] },
+    { id: '3.6', title: 'Python Turtle Graphics', level: 'Advanced', topics: ['Importing modules', 'Drawing with code', 'Loop-based geometry'], projects: ['Algorithmic Mandala Generator'] }
   ],
-  'Class 6': [
-    { id: '6.1', title: 'HTML & CSS Basics', level: 'Intermediate', topics: ['HTML Tags & Elements', 'Styling Text with CSS', 'The Box Model'], projects: ['Personal "About Me" Portfolio'] },
-    { id: '6.2', title: 'Prompt Engineering 101', level: 'Intermediate', topics: ['Context Setting in AI', 'Roleplay Prompts', 'Iterative Refining'], projects: ['Historical Figure Chatbot Prompts'] },
-    { id: '6.3', title: 'Intro to Algorithms', level: 'Intermediate', topics: ['What is an algorithm?', 'Sequential logic', 'Flowcharting'], projects: ['Peanut Butter Jelly Algorithm'] }
-  ],
-  'Class 7': [
-    { id: '7.1', title: 'Intro to Python Programming', level: 'Advanced', topics: ['Variables & Data Types', 'Math Operations', 'Print statements & Strings'], projects: ['Interactive Text Calculator'] },
-    { id: '7.2', title: 'HTML & CSS Layouts', level: 'Advanced', topics: ['CSS Flexbox basics', 'CSS Grid basics', 'Responsive Design concepts'], projects: ['Responsive Science Blog Layout'] },
-    { id: '7.3', title: 'Digital Media Ethics', level: 'Advanced', topics: ['Copyright & Fair Use', 'Creative Commons', 'Plagiarism in digital age'], projects: ['Properly Cited Research Page'] }
-  ],
-  'Class 8': [
-    { id: '8.1', title: 'Python Control Flow', level: 'Advanced', topics: ['If/Else Conditional Logic', 'For Loops & Iteration', 'While Loops'], projects: ['Number Guessing Game', 'Star Pattern Generator'] },
-    { id: '8.2', title: 'Cybersecurity - Deepfakes', level: 'Advanced', topics: ['Identifying generated media', 'Verification tools', 'Social impact'], projects: ['Fact-checker Toolkit Concept'] },
-    { id: '8.3', title: 'Python Turtle Graphics', level: 'Advanced', topics: ['Importing modules', 'Drawing with code', 'Loop-based geometry'], projects: ['Algorithmic Mandala Generator'] }
-  ],
-  'Class 9': [
-    { id: '9.1', title: 'Python Functions & Scope', level: 'Expert', topics: ['Defining custom functions', 'Global vs Local variables', 'Return values & Recursion'], projects: ['Custom Math Utility Library'] },
-    { id: '9.2', title: 'Advanced Algorithms', level: 'Expert', topics: ['Sorting logic (Bubble, Select)', 'Searching logic (Linear, Binary)', 'Optimization basics'], projects: ['Data Sorter Visualizer Script'] },
-    { id: '9.3', title: 'Building AI Assistants', level: 'Expert', topics: ['API integrations concept', 'System prompts engineering', 'Chaining prompts'], projects: ['Study Companion AI Bot Design'] }
-  ],
-  'Class 10': [
-    { id: '10.1', title: 'Python Game Development', level: 'Expert', topics: ['Game loops & Delta time', 'State management', 'User input event handling'], projects: ['Text-Based Adventure Game', 'Tic-Tac-Toe Logic'] },
-    { id: '10.2', title: 'Full Stack Integration Concepts', level: 'Expert', topics: ['REST APIs & JSON data', 'Client-Server architecture', 'Frontend to Backend flow'], projects: ['Weather Data Fetcher Dashboard'] },
-    { id: '10.3', title: 'Capstone Exhibition Prep', level: 'Expert', topics: ['Project compilation', 'Debugging and Polish', 'Technical presentation'], projects: ['Final Capstone Exhibition Project'] }
+  'Proficient': [
+    { id: '4.1', title: 'Python Functions & Scope', level: 'Expert', topics: ['Defining custom functions', 'Global vs Local variables', 'Return values & Recursion'], projects: ['Custom Math Utility Library'] },
+    { id: '4.2', title: 'Advanced Algorithms', level: 'Expert', topics: ['Sorting logic (Bubble, Select)', 'Searching logic (Linear, Binary)', 'Optimization basics'], projects: ['Data Sorter Visualizer Script'] },
+    { id: '4.3', title: 'Building AI Assistants', level: 'Expert', topics: ['API integrations concept', 'System prompts engineering', 'Chaining prompts'], projects: ['Study Companion AI Bot Design'] },
+    { id: '4.4', title: 'Python Game Development', level: 'Expert', topics: ['Game loops & Delta time', 'State management', 'User input event handling'], projects: ['Text-Based Adventure Game', 'Tic-Tac-Toe Logic'] },
+    { id: '4.5', title: 'Full Stack Integration Concepts', level: 'Expert', topics: ['REST APIs & JSON data', 'Client-Server architecture', 'Frontend to Backend flow'], projects: ['Weather Data Fetcher Dashboard'] },
+    { id: '4.6', title: 'Capstone Exhibition Prep', level: 'Expert', topics: ['Project compilation', 'Debugging and Polish', 'Technical presentation'], projects: ['Final Capstone Exhibition Project'] }
   ]
 };
 
@@ -125,7 +118,7 @@ const CourseCard = ({ course }) => {
 };
 
 const Courses = () => {
-  const [activeTab, setActiveTab] = useState(classesTabs[0]);
+  const [activeTab, setActiveTab] = useState(levelTabs[0]);
 
   // Framer motion variants for tab content replacement
   const variants = {
@@ -147,7 +140,7 @@ const Courses = () => {
             Software & Digital Fluency
           </div>
           <AnimatedText
-            text="CODING COURSES BY CLASS"
+            text="CODING COURSES BY LEVEL"
             className="text-text font-display text-5xl md:text-7xl leading-none mb-6 tracking-wide drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] block"
           />
           <p className="font-sans text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
@@ -155,10 +148,28 @@ const Courses = () => {
           </p>
         </section>
 
+        {/* Industry toolchain band */}
+        <section className="container mx-auto px-4 md:px-8 mb-16 relative z-10 max-w-6xl">
+          <div className="relative rounded-2xl overflow-hidden border border-border group">
+            <LabImage name="DSC06637" size="lg" alt="Industry-grade software toolchain: ROS, Gazebo, OpenCV and more" className="aspect-[21/9] md:aspect-[21/7] w-full" imgClassName="group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/20" />
+            <div className="absolute inset-0 flex items-center">
+              <div className="p-6 md:p-12 max-w-xl">
+                <div className="inline-block px-3 py-1 mb-4 rounded-full border border-primary/30 text-primary uppercase font-condensed tracking-widest text-xs bg-primary/10 backdrop-blur-sm">
+                  Real Tools, Not Toys
+                </div>
+                <h2 className="font-display text-3xl md:text-5xl text-text tracking-wide leading-none">
+                  From First Keystroke to <span className="text-primary">Industry Frameworks</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="container mx-auto px-4 md:px-8 relative z-10 max-w-6xl">
           {/* Tabs */}
           <div className="flex overflow-x-auto hide-scrollbar border-b border-border/50 mb-12 pb-px justify-start md:justify-center">
-            {classesTabs.map((tab) => {
+            {levelTabs.map((tab) => {
               const isActive = activeTab === tab;
               return (
                 <button

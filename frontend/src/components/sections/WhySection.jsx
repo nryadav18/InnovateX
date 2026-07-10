@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GlowBorder } from '../ui/GlowBorder';
+import { LabImage } from '../ui/LabImage';
 import { Code2, Bot } from 'lucide-react';
 
 const WhySection = () => {
@@ -27,8 +28,12 @@ const WhySection = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <GlowBorder className="h-full">
-              <div className="p-8 md:p-12 h-full flex flex-col items-start bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-surface via-bg to-bg relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
+              <div className="relative overflow-hidden">
+                <LabImage name="DSC06636" size="sm" alt="Industry-grade coding toolchain wall" className="aspect-[16/7] w-full" imgClassName="hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+              </div>
+              <div className="p-8 md:p-12 pt-8 h-full flex flex-col items-start bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-surface via-bg to-bg relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 -mt-16 backdrop-blur-sm shadow-lg">
                   <Code2 size={32} className="text-primary" />
                 </div>
                 <h3 className="font-display text-4xl tracking-wide text-text mb-6">Why Coding?</h3>
@@ -46,8 +51,12 @@ const WhySection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <GlowBorder className="h-full">
-              <div className="p-8 md:p-12 h-full flex flex-col items-start bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-surface via-bg to-bg relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
+              <div className="relative overflow-hidden">
+                <LabImage name="DSC06632" size="sm" alt="Autonomous robot car built in the lab" className="aspect-[16/7] w-full" imgClassName="hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+              </div>
+              <div className="p-8 md:p-12 pt-8 h-full flex flex-col items-start bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-surface via-bg to-bg relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 -mt-16 backdrop-blur-sm shadow-lg">
                   <Bot size={32} className="text-primary" />
                 </div>
                 <h3 className="font-display text-4xl tracking-wide text-text mb-6">Why Robotics?</h3>

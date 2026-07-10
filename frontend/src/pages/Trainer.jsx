@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { PageTransition } from '../components/layout/PageTransition';
 import { AnimatedText } from '../components/ui/AnimatedText';
 import { GlowBorder } from '../components/ui/GlowBorder';
+import { LabImage } from '../components/ui/LabImage';
 import { BookOpen, Hammer, Rocket, MessageSquare, Award, Users, CheckCircle2, Milestone } from 'lucide-react';
 
 const phases = [
@@ -35,15 +36,19 @@ const Trainer = () => {
         {/* Who is this for? */}
         <section className="container mx-auto px-4 md:px-8 mb-24 max-w-5xl relative z-10">
           <GlowBorder>
-            <div className="bg-surface p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/30">
-                <Users size={40} className="text-primary" />
-              </div>
-              <div>
+            <div className="grid md:grid-cols-2">
+              <div className="bg-surface p-8 md:p-12 flex flex-col justify-center">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/30 mb-6">
+                  <Users size={36} className="text-primary" />
+                </div>
                 <h3 className="font-display text-3xl md:text-4xl text-text mb-4">Who is this for?</h3>
                 <p className="font-sans text-text-muted text-lg leading-relaxed">
-                  This programme is designed for passionate educators, fresh graduates, or school teachers who want to upskill. <strong className="text-text font-medium">No prior coding or robotics experience is required.</strong> We start from absolute zero and build you into a dual-tech master of pedagogy, fully capable of leading both software labs and hardware workshops over intensive training days.
+                  This programme is designed for passionate educators, fresh graduates, or school teachers who want to upskill. <strong className="text-text font-medium">No prior coding or robotics experience is required.</strong> We start from absolute zero and build you into a dual-tech master of pedagogy, fully capable of leading both software labs and hardware workshops.
                 </p>
+              </div>
+              <div className="relative min-h-[260px] md:min-h-0">
+                <LabImage name="DSC06584" size="lg" alt="Robotic arm the trainers learn to teach" className="absolute inset-0 w-full h-full" imgClassName="hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-surface/80 via-transparent to-transparent" />
               </div>
             </div>
           </GlowBorder>

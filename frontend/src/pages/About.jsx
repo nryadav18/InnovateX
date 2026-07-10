@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { PageTransition } from '../components/layout/PageTransition';
 import { AnimatedText } from '../components/ui/AnimatedText';
 import { GlowBorder } from '../components/ui/GlowBorder';
-import { Target, Eye, Lightbulb, Hexagon, Shield, Zap, Sparkles, MapPin } from 'lucide-react';
+import { LabImage } from '../components/ui/LabImage';
+import { Target, Eye, Lightbulb, Hexagon, Shield, Zap, Users, MapPin } from 'lucide-react';
 
 const About = () => {
   return (
@@ -81,13 +82,47 @@ const About = () => {
               viewport={{ once: true, margin: "-100px" }}
               className="w-full lg:w-1/2 h-80 rounded-xl overflow-hidden relative border-2 border-border group"
             >
-              {/* Placeholder for an image or dynamic asset */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-card to-surface group-hover:scale-105 transition-transform duration-700"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img src={`https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop`} alt="InnovaTe X Tech Team" className="w-full h-full object-cover opacity-60 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" />
+              <LabImage
+                name="DSC06515"
+                size="lg"
+                alt="Inside the InnovaTeX robotics lab"
+                className="absolute inset-0 w-full h-full"
+                imgClassName="group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-bg/60 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-4 left-4 z-10">
+                <div className="font-condensed uppercase tracking-[0.2em] text-primary text-xs mb-1">Kakinada · Andhra Pradesh</div>
+                <div className="font-display text-2xl text-text tracking-wide">The InnovaTeX Lab</div>
               </div>
               <div className="absolute inset-0 border-[4px] border-primary/20 pointer-events-none"></div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Branded environment band */}
+        <section className="relative mb-32 z-10">
+          <div className="relative h-[380px] md:h-[460px] overflow-hidden">
+            <LabImage name="DSC06603" size="lg" alt="Binary Minds, Bright Futures — the InnovaTeX lab wall" className="absolute inset-0 w-full h-full" imgClassName="scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/30" />
+            <div className="absolute inset-0 bg-bg/30" />
+            <div className="container mx-auto px-4 md:px-8 h-full flex items-center relative z-10">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                className="max-w-2xl"
+              >
+                <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-primary/30 text-primary uppercase font-condensed tracking-[0.3em] text-sm bg-primary/10 backdrop-blur-sm">
+                  Our Ethos
+                </div>
+                <h2 className="font-display text-5xl md:text-7xl text-text leading-none tracking-wide mb-4">
+                  Binary Minds. <span className="text-primary">Bright Futures.</span>
+                </h2>
+                <p className="font-sans text-text-muted text-lg leading-relaxed">
+                  Our labs are physical spaces where abstract logic becomes something a child can hold, wire, and watch come alive.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -104,7 +139,7 @@ const About = () => {
                   <Target size={40} className="text-primary mb-6" />
                   <h3 className="font-display text-3xl tracking-wide text-text mb-4">Mission</h3>
                   <p className="font-sans text-text-muted leading-relaxed">
-                    Equip every school student from Class 3 to Class 10 with Coding, Robotics, and AI skills through hands-on, curriculum-aligned learning.
+                    Equip every school student — across all four levels, from Flyers to Proficient — with Coding, Robotics, and AI skills through hands-on, curriculum-aligned learning.
                   </p>
                 </div>
               </GlowBorder>

@@ -1,4 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+
+// The design tokens live as hex values inside CSS variables (see index.css) so that
+// inline `var(--color-x)` usages keep working as full colors. Tailwind, however, cannot
+// synthesise `/opacity` variants (bg-primary/10, from-bg/80, …) from a raw `var()` string.
+// This helper returns a function-form color so opacity modifiers resolve via color-mix,
+// while a bare usage (no opacity) still returns the plain variable.
+const withAlpha = (varName) => ({ opacityValue }) =>
+  opacityValue === undefined
+    ? `var(${varName})`
+    : `color-mix(in srgb, var(${varName}) calc(${opacityValue} * 100%), transparent)`;
+
 export default {
   content: [
     "./index.html",
@@ -7,15 +18,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: 'var(--color-bg)',
-        surface: 'var(--color-surface)',
-        primary: 'var(--color-primary)',
-        'primary-dim': 'var(--color-primary-dim)',
-        text: 'var(--color-text)',
-        'text-muted': 'var(--color-text-muted)',
-        border: 'var(--color-border)',
-        card: 'var(--color-card)',
-        highlight: 'var(--color-highlight)',
+        bg: withAlpha('--color-bg'),
+        surface: withAlpha('--color-surface'),
+        primary: withAlpha('--color-primary'),
+        'primary-dim': withAlpha('--color-primary-dim'),
+        text: withAlpha('--color-text'),
+        'text-muted': withAlpha('--color-text-muted'),
+        border: withAlpha('--color-border'),
+        card: withAlpha('--color-card'),
+        highlight: withAlpha('--color-highlight'),
       },
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],

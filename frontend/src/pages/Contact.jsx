@@ -85,7 +85,7 @@ const Contact = () => {
                       <h4 className="font-condensed text-text uppercase tracking-widest text-sm mb-1">Branches - Visakhapatnam, Kakinada</h4>
                       <p className="font-sans text-text-muted leading-relaxed">
                         65-5-1/C, opp. GPT College,<br/>
-                        G.P.T. Colony, Kakanada,<br/>
+                        G.P.T. Colony, Kakinada,<br/>
                         Andhra Pradesh – 533003
                       </p>
                     </div>

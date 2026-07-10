@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PageTransition } from '../components/layout/PageTransition';
 import { AnimatedText } from '../components/ui/AnimatedText';
+import { LabImage } from '../components/ui/LabImage';
 import { ChevronDown, Code, Layout, Terminal, Gamepad2, Cpu, Radio, CheckCircle2 } from 'lucide-react';
 
 const phasesData = [
@@ -88,6 +89,33 @@ const Programme = () => {
           <p className="font-sans text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
             A comprehensive, step-by-step breakdown of how we transform absolute beginners into confident technologists who build real-world software applications and fully autonomous robotic systems.
           </p>
+        </section>
+
+        {/* Software → Hardware progression band */}
+        <section className="container mx-auto px-4 md:px-8 mb-20 max-w-6xl">
+          <div className="grid grid-cols-3 gap-3 md:gap-5">
+            {[
+              { name: 'DSC06636', label: 'Write Code' },
+              { name: 'DSC06530', label: 'Wire Hardware' },
+              { name: 'DSC06567', label: 'Build Robots' },
+            ].map((step, i) => (
+              <motion.div
+                key={step.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative overflow-hidden rounded-xl border border-border"
+              >
+                <LabImage name={step.name} size="sm" alt={step.label} className="aspect-square md:aspect-[4/3] w-full" imgClassName="group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent" />
+                <div className="absolute bottom-0 inset-x-0 p-3 md:p-5">
+                  <div className="font-condensed uppercase tracking-[0.18em] text-primary text-[10px] md:text-xs mb-0.5">Step {i + 1}</div>
+                  <div className="font-display text-lg md:text-3xl text-text leading-none tracking-wide">{step.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         {/* Timeline & Accordion */}

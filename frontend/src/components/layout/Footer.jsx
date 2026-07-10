@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Globe, Tv, MessageSquare, Terminal, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+// Connect icons temporarily disabled — re-add when the Connect block is restored:
+// import { Globe, Tv, MessageSquare, Terminal } from 'lucide-react';
 import { useLenis } from 'lenis/react';
 
 const Footer = () => {
@@ -30,12 +32,11 @@ const Footer = () => {
           {/* Col 1 */}
           <div className="space-y-6">
             <Link to="/" onClick={handleScrollTop} className="inline-block">
-              <div className="text-4xl font-display font-bold tracking-wider text-text">
-                InnovaTe <span className="text-primary italic">X</span>
-              </div>
-              <div className="text-xs text-text-muted uppercase tracking-widest mt-1">
-                Binary Minds | Bright Futures
-              </div>
+              <img
+                src="/InnovateX_logo.png"
+                alt="InnovaTeX — Binary Minds | Bright Futures"
+                className="h-16 md:h-20 w-auto rounded-lg"
+              />
             </Link>
             <p className="text-text-muted font-sans text-sm leading-relaxed">
               Equipping every school student with Coding, Robotics, and AI skills through hands-on, curriculum-aligned learning. Where ideas become real, moving things.
@@ -64,7 +65,7 @@ const Footer = () => {
               <li className="leading-relaxed">
                 <span className="font-bold text-text">Headquarters:</span><br />
                 65-5-1/C, opp. GPT College,<br />
-                G.P.T. Colony, Kakanada,<br />
+                G.P.T. Colony, Kakinada,<br />
                 Andhra Pradesh – 533003
               </li>
               <li>
@@ -81,6 +82,7 @@ const Footer = () => {
 
           {/* Col 4 */}
           <div>
+            {/* Connect — commented out for now
             <h4 className="font-condensed text-2xl text-text uppercase tracking-wider mb-6">Connect</h4>
             <div className="flex space-x-4 mb-8">
               {[Globe, Tv, MessageSquare, Terminal].map((Icon, i) => (
@@ -89,6 +91,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            */}
 
             <h4 className="font-condensed text-lg text-text uppercase tracking-wider mb-4">Newsletter</h4>
             <form className="relative" onSubmit={(e) => e.preventDefault()}>
@@ -112,7 +115,7 @@ const Footer = () => {
 
       <div className="bg-[#050810] py-4 border-t border-border border-opacity-30">
         <div className="container mx-auto px-4 md:px-8 text-center text-text-muted text-xs font-sans">
-          Copyright © 2026 InnovaTeX | All Rights Reserved | Kakanada, Andhra Pradesh
+          Copyright © 2026 InnovaTeX | All Rights Reserved | Kakinada, Andhra Pradesh
         </div>
       </div>
     </footer>

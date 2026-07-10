@@ -3,8 +3,8 @@ import { StatCounter } from '../ui/StatCounter';
 
 const stats = [
   { value: 100, suffix: '%', label: 'Schools Renewed Year 2' },
-  { value: 8, suffix: '', label: 'Classes Covered (Class 3–10)' },
-  { value: 4, suffix: '', label: 'Levels of Learning' },
+  { value: 6, suffix: '', label: 'Programme Phases' },
+  { value: 4, suffix: '', label: 'Levels (Flyers → Proficient)' },
   { value: 1, suffix: '', label: 'In Standards' },
 ];
 
@@ -14,7 +14,7 @@ const StatsBar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
           {stats.map((stat, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}

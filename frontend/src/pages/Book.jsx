@@ -5,14 +5,10 @@ import { GlowBorder } from '../components/ui/GlowBorder';
 import { CheckCircle2, BookOpen, PenTool, Layout, MonitorSmartphone } from 'lucide-react';
 
 const levels = [
-  { name: 'Level 1 Entry', classes: 'Class 3' },
-  { name: 'Level 1 Consolidation', classes: 'Class 4' },
-  { name: 'Level 2 Foundations', classes: 'Class 5' },
-  { name: 'Level 2 Growth', classes: 'Class 6' },
-  { name: 'Level 3 Intermediate', classes: 'Class 7' },
-  { name: 'Level 3 Project Entry', classes: 'Class 8' },
-  { name: 'Level 4 Advanced', classes: 'Class 9' },
-  { name: 'Level 4 Capstone', classes: 'Class 10' }
+  { name: 'Flyers', focus: 'Foundations & digital fluency', image: '/1. Innovate X - FLYERS.jpeg' },
+  { name: 'Movers', focus: 'Logic, web & first code', image: '/2. Innovate X - MOVERS.jpeg' },
+  { name: 'Advanced', focus: 'Python & applied projects', image: '/3. Innovate X - ADVANCED.jpeg' },
+  { name: 'Proficient', focus: 'Full-stack, AI & capstone builds', image: '/4. Innovate X - PROFICIENT.jpeg' }
 ];
 
 const Book = () => {
@@ -46,7 +42,7 @@ const Book = () => {
               />
               
               <p className="text-text-muted text-lg leading-relaxed mb-8">
-                A physical companion to digital creation. Meticulously designed from Class 3 to Class 10, the InnovaTe X Student Book merges Coding and Robotics into a single, cohesive, hands-on curriculum entirely aligned to modern school standards.
+                A physical companion to digital creation. Meticulously designed across four progressive levels — Flyers to Proficient — the InnovaTe X Student Book merges Coding and Robotics into a single, cohesive, hands-on curriculum entirely aligned to modern school standards.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -91,7 +87,7 @@ const Book = () => {
                   
                   <div className="mt-auto pt-4 border-t border-border">
                     <div className="font-condensed text-text-muted uppercase tracking-widest text-xs">Student Edition</div>
-                    <div className="font-sans text-text text-sm font-bold">Level 1 - Level 4</div>
+                    <div className="font-sans text-text text-sm font-bold">Flyers → Proficient</div>
                   </div>
                 </div>
 
@@ -110,10 +106,10 @@ const Book = () => {
 
         </section>
 
-        {/* The 8 Levels */}
+        {/* The 4 Levels */}
         <section className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-display text-5xl text-text text-center">8 Levels of Progression</h2>
+            <h2 className="font-display text-5xl text-text text-center">4 Levels of Progression</h2>
             <p className="font-sans text-text-muted text-lg mt-4 max-w-2xl mx-auto">
               A structured, scaffolded journey. Each book builds upon the cognitive leaps made in the previous year, leaving zero gaps in knowledge.
             </p>
@@ -129,12 +125,18 @@ const Book = () => {
                 transition={{ delay: i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
                 <GlowBorder className="h-full">
-                  <div className="bg-card p-6 h-full flex flex-col items-center justify-center text-center group">
-                    <div className="w-12 h-12 bg-surface rounded-full flex items-center justify-center mb-4 border border-border group-hover:border-primary transition-colors">
-                      <span className="font-display text-xl text-primary">{i+1}</span>
+                  <div className="bg-card p-6 h-full flex flex-col items-center text-center group">
+                    <div className="w-full aspect-[1/1.4] mb-6 overflow-hidden rounded shadow-lg border border-border group-hover:border-primary/50 transition-colors">
+                      <img 
+                        src={level.image} 
+                        alt={`${level.name} Student Book`} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="font-condensed text-text-muted text-xs uppercase tracking-widest mb-1">{level.classes}</div>
-                    <h4 className="font-sans font-bold text-text text-lg">{level.name}</h4>
+                    <div className="font-condensed text-primary text-xs uppercase tracking-widest mb-1">Level {i + 1}</div>
+                    <h4 className="font-display text-2xl text-text tracking-wide mb-2">{level.name}</h4>
+                    <p className="font-sans text-text-muted text-sm">{level.focus}</p>
                   </div>
                 </GlowBorder>
               </motion.div>

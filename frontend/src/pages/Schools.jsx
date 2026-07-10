@@ -6,6 +6,7 @@ import * as z from 'zod';
 import { PageTransition } from '../components/layout/PageTransition';
 import { AnimatedText } from '../components/ui/AnimatedText';
 import { Button } from '../components/ui/Button';
+import { LabImage } from '../components/ui/LabImage';
 import { Building, Users, Star, ArrowRight, CheckCircle2, Building2 } from 'lucide-react';
 import SchoolBenefitsSection from '../components/sections/SchoolBenefitsSection';
 import WhatIfSection from '../components/sections/WhatIfSection';
@@ -106,12 +107,20 @@ const Schools = () => {
             </motion.div>
 
             {/* Right: Next Steps */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               className="lg:w-1/2"
             >
+              <div className="relative rounded-2xl overflow-hidden border border-border mb-10 group">
+                <LabImage name="DSC06511" size="lg" alt="InnovaTeX project showcase cabinet in a partner school lab" className="aspect-[16/9] w-full" imgClassName="group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-5 z-10">
+                  <div className="font-condensed uppercase tracking-[0.2em] text-primary text-xs mb-1">Your Future Lab</div>
+                  <div className="font-display text-2xl text-text tracking-wide">A Showcase Students Are Proud Of</div>
+                </div>
+              </div>
               <h2 className="font-display text-4xl text-text mb-8">4 Steps to Transformation</h2>
               <div className="space-y-6">
                 {[
@@ -170,11 +179,11 @@ const Schools = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                 <div className="space-y-2">
                   <label className="font-condensed tracking-widest text-text-muted text-xs uppercase">City / District *</label>
-                  <input {...register('city')} type="text" className="w-full bg-surface border border-border focus:border-primary rounded-lg px-4 py-3 text-text placeholder:text-border outline-none transition-colors" placeholder="Kakanada" />
+                  <input {...register('city')} type="text" className="w-full bg-surface border border-border focus:border-primary rounded-lg px-4 py-3 text-text placeholder:text-border outline-none transition-colors" placeholder="Kakinada" />
                   {errors.city && <span className="text-red-400 text-xs">{errors.city.message}</span>}
                 </div>
                 <div className="space-y-2">
-                  <label className="font-condensed tracking-widest text-text-muted text-xs uppercase">Total Students (Class 3-10) *</label>
+                  <label className="font-condensed tracking-widest text-text-muted text-xs uppercase">Total Students (All Levels) *</label>
                   <select {...register('students')} className="w-full bg-surface border border-border focus:border-primary rounded-lg px-4 py-3 text-text outline-none transition-colors appearance-none">
                     <option value="">Select Range</option>
                     <option value="100-300">100 - 300 Students</option>
