@@ -70,7 +70,7 @@ const CodingGridTeaser = () => {
                   <cdng.icon className="text-primary w-7 h-7" />
                 </div>
                 <div className="mt-2">
-                  <div className="font-condensed text-primary text-xs uppercase tracking-widest mb-1">Level {cdng.num}</div>
+                  <div className="font-condensed text-primary text-xs uppercase tracking-widest mb-1">Level</div>
                   <h3 className="font-display text-4xl text-text leading-none">{cdng.level}</h3>
                 </div>
                 <p className="text-text-muted font-sans text-sm h-16">{cdng.topics}</p>
