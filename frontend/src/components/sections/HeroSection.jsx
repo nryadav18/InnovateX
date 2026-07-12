@@ -13,25 +13,36 @@ const HeroSection = () => {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    v.play().catch(() => {});
 
+    // React doesn't reliably apply the `muted` JSX attribute to the underlying
+    // DOM property, and browsers block autoplay for anything that isn't muted,
+    // so force it imperatively — this is what makes the video auto-play.
+    v.muted = true;
+    v.defaultMuted = true;
+
+    const play = () => v.play().catch(() => {});
+    play();
+    // Retry once the media is actually ready (covers slower/large downloads).
+    v.addEventListener('canplay', play, { once: true });
+
+    const events = ['pointerdown', 'keydown', 'touchstart', 'wheel'];
     const enableSound = () => {
-      if (!videoRef.current) return;
-      videoRef.current.muted = false;
-      videoRef.current.volume = 1;
-      videoRef.current.play().catch(() => {});
-      setMuted(false);
-      remove();
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+        videoRef.current.volume = 1;
+        videoRef.current.play().catch(() => {});
+        setMuted(false);
+      }
+      events.forEach((e) => window.removeEventListener(e, enableSound));
     };
-    const remove = () => {
-      ['pointerdown', 'keydown', 'touchstart', 'wheel'].forEach((e) =>
-        window.removeEventListener(e, enableSound)
-      );
-    };
-    ['pointerdown', 'keydown', 'touchstart', 'wheel'].forEach((e) =>
+    events.forEach((e) =>
       window.addEventListener(e, enableSound, { once: true, passive: true })
     );
-    return remove;
+
+    return () => {
+      v.removeEventListener('canplay', play);
+      events.forEach((e) => window.removeEventListener(e, enableSound));
+    };
   }, []);
 
   const toggleMute = () => {
@@ -130,6 +141,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
+        onPointerDown={(e) => e.stopPropagation()}
         onClick={toggleMute}
         aria-label={muted ? 'Unmute intro video' : 'Mute intro video'}
         className="absolute bottom-10 right-6 md:right-10 z-20 flex items-center gap-2 rounded-full border border-primary/40 bg-bg/60 backdrop-blur-sm px-4 py-2.5 text-primary hover:border-primary hover:bg-bg/80 transition-colors shadow-[0_0_15px_rgba(245,197,24,0.2)]"
