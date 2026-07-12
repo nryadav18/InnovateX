@@ -151,9 +151,9 @@ const Contact = () => {
                   </div>
 
                   <div className="pt-2">
-                    <Button type="submit" className="w-full sm:w-auto py-4 px-8 flex items-center gap-2 justify-center" disabled={submitStatus === 'loading'}>
+                    <Button type="submit" className="w-full sm:w-auto py-4 px-10 flex items-center gap-2 justify-center" disabled={submitStatus === 'loading'}>
                       {submitStatus === 'loading' ? 'SENDING...' : (
-                        <>SEND MESSAGE <Send size={18} /></>
+                        <div style={{display: 'flex' , justifyContent : "center", alignContent : "center", gap : 10}} >SEND MESSAGE <Send size={18} /></div>
                       )}
                     </Button>
                   </div>

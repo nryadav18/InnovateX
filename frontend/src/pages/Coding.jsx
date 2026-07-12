@@ -151,7 +151,7 @@ const Courses = () => {
         {/* Industry toolchain band */}
         <section className="container mx-auto px-4 md:px-8 mb-16 relative z-10 max-w-6xl">
           <div className="relative rounded-2xl overflow-hidden border border-border group">
-            <LabImage name="DSC06637" size="lg" alt="Industry-grade software toolchain: ROS, Gazebo, OpenCV and more" className="aspect-[21/9] md:aspect-[21/7] w-full" imgClassName="group-hover:scale-105" />
+            <LabImage name="DSC06515" size="lg" alt="Industry-grade software toolchain: ROS, Gazebo, OpenCV and more" className="aspect-[21/9] md:aspect-[21/7] w-full" imgClassName="group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/20" />
             <div className="absolute inset-0 flex items-center">
               <div className="p-6 md:p-12 max-w-xl">

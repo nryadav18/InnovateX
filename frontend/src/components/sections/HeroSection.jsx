@@ -55,7 +55,6 @@ const HeroSection = () => {
           src="/Innovatex_Intro.mp4"
           poster="/robotics/DSC06515.jpg"
           autoPlay
-          muted
           loop
           playsInline
           preload="auto"

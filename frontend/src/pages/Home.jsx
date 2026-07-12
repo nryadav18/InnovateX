@@ -17,13 +17,13 @@ const Home = () => {
         <HeroSection />
         <StatsBar />
         <WhySection />
-        <ProgrammeOverview />
+        {/* <ProgrammeOverview /> */}
         <CoursesGridTeaser />
         <LabShowcaseSection />
-        <SchoolBenefitsSection />
+        {/* <SchoolBenefitsSection /> */}
         <WhatIfSection />
-        <TestimonialsSection />
-        <CTASection />
+        {/* <TestimonialsSection /> */}
+        {/* <CTASection /> */}
       </div>
     </PageTransition>
   );

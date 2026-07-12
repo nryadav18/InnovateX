@@ -12,7 +12,7 @@ const roboticsData = [
   { name: 'Movers', icon: Zap, projects: ['Motor as Dynamo', 'Solar Model', 'Solar Street Light', 'Touchless Switch and Doorbell', 'RGB Control', 'Solar Tracker', 'RC Car', 'Gravity Battery', 'Power Bank', 'Smart Water Level'] },
   { name: 'Advanced', icon: Navigation, projects: ['Smart Night Lamp', 'Automatic Water Pump Controller', 'Smart Dustbin (Auto Open)', 'Car Smart Parking', 'Metal Detector', 'RFID Attendance System', 'OLED Display Interface', 'Automatic Washroom System', 'Smart Hand Gesture Control', 'Smart Helmet'] },
   { name: 'Proficient', icon: Cpu, projects: ['Automatic Plant Watering System', 'Line Following Robot', 'School Bell Timer System', 'OLED Smart Display Dashboard', 'Obstacle Avoiding Robot', 'Smart Traffic Light', 'Automatic Railway Gate Control', 'Smart Waste Management', 'Smart Blind Stick', 'Smart School Bell with RTC'] },
-  { name: 'Industry Level', icon: Building2, projects: ['Tesla Coil', 'NFC Smart Payment', 'Walking Robot', 'Smart Vehicle Accident Alert'] }
+  // { name: 'Industry Level', icon: Building2, projects: ['Tesla Coil', 'NFC Smart Payment', 'Walking Robot', 'Smart Vehicle Accident Alert'] }
 ];
 
 const SectionHeading = ({ eyebrow, title, sub }) => (
@@ -123,7 +123,7 @@ const Robotics = () => {
         </section>
 
         {/* ================= PROGRESSION GRID (class projects) ================= */}
-        <section className="relative py-16 md:py-24">
+        <section className="relative py-20 md:py-24">
           <div
             className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
             style={{ backgroundImage: 'repeating-linear-gradient(45deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 0, transparent 50%)', backgroundSize: '20px 20px' }}
@@ -151,9 +151,6 @@ const Robotics = () => {
                           <level.icon size={24} className="text-primary" />
                         </div>
                         <div>
-                          <div className="text-xs text-primary font-bold tracking-widest uppercase mb-1 drop-shadow-[0_0_5px_rgba(245,197,24,0.5)]">
-                            {level.name === 'Industry Level' ? 'Advanced Concept' : `Level ${i + 1}`}
-                          </div>
                           <h3 className="font-display text-3xl text-text tracking-wider leading-none">
                             {level.name}
                           </h3>
@@ -272,7 +269,7 @@ const Robotics = () => {
         </section>
 
         {/* ================= INSIDE THE LAB (full gallery) ================= */}
-        <section className="relative py-24 md:py-28 bg-surface border-t border-border">
+        {/* <section className="relative py-24 md:py-28 bg-surface border-t border-border">
           <div className="container mx-auto px-4 md:px-8 relative z-10 max-w-7xl">
             <SectionHeading
               eyebrow="Photo Gallery"
@@ -281,7 +278,7 @@ const Robotics = () => {
             />
             <LabGallery items={allImages} />
           </div>
-        </section>
+        </section> */}
 
       </div>
     </PageTransition>

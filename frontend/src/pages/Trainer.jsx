@@ -55,7 +55,7 @@ const Trainer = () => {
         </section>
 
         {/* Methodology Cycle */}
-        <section className="container mx-auto px-4 md:px-8 mb-32 relative z-10">
+        {/* <section className="container mx-auto px-4 md:px-8 mb-32 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-display text-5xl text-text">The 4-Step Methodology</h2>
           </div>
@@ -88,10 +88,10 @@ const Trainer = () => {
               </motion.div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* 6 Phases Summary */}
-        <section className="container mx-auto px-4 md:px-8 mb-32 relative z-10">
+        {/* <section className="container mx-auto px-4 md:px-8 mb-32 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-display text-5xl text-text">Intensive Roadmap</h2>
           </div>
@@ -117,7 +117,7 @@ const Trainer = () => {
               </motion.div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Assessment Rubric Table */}
         <section className="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">

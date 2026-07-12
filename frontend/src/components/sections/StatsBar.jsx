@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 import { StatCounter } from '../ui/StatCounter';
 
 const stats = [
-  { value: 100, suffix: '%', label: 'Schools Renewed Year 2' },
-  { value: 6, suffix: '', label: 'Programme Phases' },
+  { value: 100, suffix: '%', label: 'Schools Renewed Next Year' },
   { value: 4, suffix: '', label: 'Levels (Flyers → Proficient)' },
   { value: 1, suffix: '', label: 'In Standards' },
 ];
@@ -12,7 +11,7 @@ const StatsBar = () => {
   return (
     <section className="bg-surface py-16 border-y border-border relative z-20">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-4 text-center">
           {stats.map((stat, i) => (
             <motion.div
               key={i}

@@ -95,9 +95,9 @@ const Programme = () => {
         <section className="container mx-auto px-4 md:px-8 mb-20 max-w-6xl">
           <div className="grid grid-cols-3 gap-3 md:gap-5">
             {[
-              { name: 'DSC06636', label: 'Write Code' },
-              { name: 'DSC06530', label: 'Wire Hardware' },
-              { name: 'DSC06567', label: 'Build Robots' },
+              { name: 'DSC06507', label: 'Write Code' },
+              { name: 'DSC06530', label: 'Think Logics' },
+              { name: 'DSC06567', label: 'Build Prototypes' },
             ].map((step, i) => (
               <motion.div
                 key={step.name}
@@ -152,7 +152,7 @@ const Programme = () => {
                         <h2 className="font-display text-3xl md:text-4xl text-text tracking-wide">{phase.title}</h2>
                       </div>
                     </div>
-                    <ChevronDown className={`text-text-muted transition-transform duration-300 ${isActive ? 'rotate-180 text-primary' : ''}`} size={28} />
+                    {/* <ChevronDown className={`text-text-muted transition-transform duration-300 ${isActive ? 'rotate-180 text-primary' : ''}`} size={28} /> */}
                   </button>
 
                   {/* Accordion Content */}
@@ -165,7 +165,7 @@ const Programme = () => {
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 md:p-8 pt-0 border-t border-border mt-2 grid grid-cols-1 gap-4">
+                        {/* <div className="p-6 md:p-8 pt-0 border-t border-border mt-2 grid grid-cols-1 gap-4">
                           {phase.topics.map((topic, i) => (
                             <div key={i} className="bg-bg/50 border border-border p-5 rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-4 group hover:border-primary/30 transition-colors">
                               <div className="flex-grow">
@@ -181,7 +181,7 @@ const Programme = () => {
                               </div>
                             </div>
                           ))}
-                        </div>
+                        </div> */}
                       </motion.div>
                     )}
                   </AnimatePresence>

@@ -29,7 +29,7 @@ const WhySection = () => {
           >
             <GlowBorder className="h-full">
               <div className="relative overflow-hidden">
-                <LabImage name="DSC06636" size="sm" alt="Industry-grade coding toolchain wall" className="aspect-[16/7] w-full" imgClassName="hover:scale-105" />
+                <LabImage name="DSC06507" size="sm" alt="Industry-grade coding toolchain wall" className="aspect-[16/7] w-full" imgClassName="hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
               </div>
               <div className="p-8 md:p-12 pt-8 h-full flex flex-col items-start bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-surface via-bg to-bg relative z-10">

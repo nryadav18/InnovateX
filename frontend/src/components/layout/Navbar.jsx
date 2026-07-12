@@ -12,7 +12,7 @@ const navLinks = [
   { name: 'Robotics', path: '/robotics' },
   { name: 'Trainer', path: '/trainer' },
   { name: 'Book', path: '/book' },
-  { name: 'For Schools', path: '/schools' },
+  // { name: 'For Schools', path: '/schools' },
   { name: 'Contact', path: '/contact' }
 ];
 
@@ -66,7 +66,7 @@ const Navbar = () => {
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <Button to="/schools" variant="primary">Partner With Us</Button>
+            {/* <Button to="/schools" variant="primary">Partner With Us</Button> */}
           </div>
 
           {/* Mobile Hamburger */}
