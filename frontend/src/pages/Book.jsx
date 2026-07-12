@@ -131,8 +131,6 @@ const Book = () => {
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="font-condensed uppercase tracking-[0.3em] text-sm"
                     >
-                      <span className="text-primary">Level {active + 1}</span>
-                      <span className="text-text-muted mx-2">·</span>
                       <span className="text-text">{levels[active].name}</span>
                     </motion.div>
                   </AnimatePresence>
